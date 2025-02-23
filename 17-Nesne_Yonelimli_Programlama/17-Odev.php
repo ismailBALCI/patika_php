@@ -1,3 +1,4 @@
+
 <?php
 
 // Temel Şekil sınıfı
@@ -36,58 +37,53 @@ class Sekil {
             $c = $this->kenar[2];
 
             $s = ($a + $b + $c) / 2;
-            $alan = ($s * ($s - $a) * ($s - $b) * ($s - $c));
+            $alan = sqrt($s * ($s - $a) * ($s - $b) * ($s - $c));
         }
 
         return $alan;
     }
 }
 
-class Kare extends Sekil { // Kare için bir kenar degeri girilemilidir.
-
-    public function cevreHesapla() {
-        echo "Karenin Çevresi: " . $this->cevreHesapla();
+class Kare extends Sekil {
+    public function cevre() {
+        echo "Karenin Çevresi: " . parent::cevreHesapla() . "<br>";
     }
 
-    public function alanHesapla() {
-        echo "Karenin Alanı: " . $this->alanHesapla();
-    }
-}
-
-class Dikdortgen extends Sekil { // Dikdörgen için iki kenar degeri girilemilidir.
-
-    public function cevreHesapla() {
-        echo "Dikdörgenin Çevresi: " . $this->cevreHesapla();
-    }
-
-    public function alanHesapla() {
-        echo "Dikdörtgenin Alanı: " . $this->alanHesapla();
+    public function alan() {
+        echo "Karenin Alanı: " . parent::alanHesapla() . "<br>";
     }
 }
 
-class Ucgen extends Sekil { // Üçgen için üç kenar degeri girilemilidir.
-
-    public function cevreHesapla() {
-        echo "Üçgenin Çevresi: " . $this->cevreHesapla();
+class Dikdortgen extends Sekil {
+    public function cevre() {
+        echo "Dikdörgenin Çevresi: " . parent::cevreHesapla() . "<br>";
     }
 
-    public function alanHesapla() {
-        echo "Üçgenin Alanı: " . $this->alanHesapla();
+    public function alan() {
+        echo "Dikdörtgenin Alanı: " . parent::alanHesapla() . "<br>";
     }
 }
 
-// Kullanım: Kare için bir, dikdörtgen için iki, üçgen için üç kenar değeri girilmelidir.
+class Ucgen extends Sekil {
+    public function cevre() {
+        echo "Üçgenin Çevresi: " . parent::cevreHesapla() . "<br>";
+    }
+
+    public function alan() {
+        echo "Üçgenin Alanı: " . parent::alanHesapla() . "<br>";
+    }
+}
 
 $kare = new Kare(5);
-$kare->cevreHesapla();
-$kare->alanHesapla();
+$kare->cevre();
+$kare->alan();
 
 $dikdortgen = new Dikdortgen(3,5);
-$dikdortgen->cevreHesapla();
-$dikdortgen->alanHesapla();
+$dikdortgen->cevre();
+$dikdortgen->alan();
 
 $ucgen = new Ucgen(3,4,5);
-$ucgen->cevreHesapla();
-$ucgen->alanHesapla();
+$ucgen->cevre();
+$ucgen->alan();
 
 ?>
