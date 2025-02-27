@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Kisiler>
+    <Kisi>
+        <isim>İsmail</isim>
+        <soyisim>BALCI</soyisim>
+        <yas>40</yas>
+    </Kisi>
+    <Kisi>
+        <isim>Fatma</isim>
+        <soyisim>BALCI</soyisim>
+        <yas>60</yas>
+    </Kisi>
+    <Kisi>
+        <isim>Mehmet</isim>
+        <soyisim>BALCI</soyisim>
+        <yas>65</yas>
+    </Kisi>
+
+</Kisiler>
