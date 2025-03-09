@@ -1,0 +1,20 @@
+#DirectoryIndex selam.php   # Giriş sayfasını ayarlar
+#Options -Indexes    # Dizini listelemeyi engeller
+
+#deny from all   # Tüm erişimi kısıtlar
+#deny from all allow from 178.62.246.245 // IP adresine izin verir.
+
+#<Files iletisim.php>
+#Deny from all
+#</Files>
+
+#AuthType Basic
+#AuthName "Restricted Content"
+#AuthUserFile /patika/26-htaccess_kullanimi/.htpasswd
+#require valid-user
+
+#ErrorDocument 404 404.html
+#ErrorDocument 401 401.html
+
+RewriteEngine on
+RewriteRule ^(tr|en)?/?([a-z0-9/-]+)$ index.php?dil=$1&sayfa=$2 [QSA]
